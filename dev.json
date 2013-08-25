@@ -1,0 +1,23 @@
+{
+  "level": {
+    "0": "EMERGENCY",
+    "1": "ALERT",
+    "2": "CRITICAL",
+    "3": "ERROR",
+    "4": "WARNING",
+    "5": "NOTICE",
+    "6": "INFO",
+    "7": "DEBUG"
+  },
+  "output": {
+    "EMERGENCY": true,
+    "ALERT": true,
+    "CRITICAL": true,
+    "ERROR": true,
+    "WARNING": true,
+    "NOTICE": true,
+    "INFO": true,
+    "DEBUG": true 
+  },
+  "throw": true
+}
