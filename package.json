@@ -1,0 +1,11 @@
+{
+  "name": "logger",
+  "description": "Keep log simple.",
+  "version": "1.0.0",
+  "author": "Shallker Wang <shallker.wang@profero.com>",
+  "main": "util/logger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shallker-wang/logger.git"
+  }
+}
