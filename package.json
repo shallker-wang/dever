@@ -20,7 +20,7 @@
     "coffee-script": "*"
   },
   "scripts": {
-    "test": "mocha --recursive --compilers coffee:coffee-script -r should"
+    "test": "mocha"
   },
   "license": "MIT"
 }
