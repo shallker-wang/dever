@@ -1,1 +1,1 @@
-module.exports = require('./logger').info;
+module.exports = require('./dever').info;

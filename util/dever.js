@@ -45,8 +45,8 @@ function defaultConfig() {
   }
 }
 
-try { dev = readFileJSON(__dirname + '/../dev.json') } catch (e) {}
-try { pro = readFileJSON(__dirname + '/../pro.json'); } catch (e) {}
+try { dev = readFileJSON(process.env.PWD + '/dev.json') } catch (e) {}
+try { pro = readFileJSON(process.env.PWD + '/pro.json'); } catch (e) {}
 
 config = dev || pro || defaultConfig();
 
@@ -83,9 +83,10 @@ function error(err) {
 }
 
 
-exports.debug = function(from) {
+exports.debug = function(from, disable) {
   from && (from = '[' + from + ']')
   return function() {
+    if (disable) return;
     if (!config.output['DEBUG']) return;
     var args = Array.prototype.slice.call(arguments);
     from && args.unshift(from);
@@ -93,9 +94,10 @@ exports.debug = function(from) {
   }
 }
 
-exports.info = function(from) {
+exports.info = function(from, disable) {
   from && (from = '[' + from + ']')
   return function() {
+    if (disable) return;
     if (!config.output['INFO']) return;
     var args = Array.prototype.slice.call(arguments);
     from && args.unshift(from);
@@ -103,9 +105,10 @@ exports.info = function(from) {
   }
 }
 
-exports.notice = function(from) {
+exports.notice = function(from, disable) {
   from && (from = '[' + from + ']')
   return function() {
+    if (disable) return;
     if (!config.output['NOTICE']) return;
     var args = Array.prototype.slice.call(arguments);
     from && args.unshift(from);
@@ -113,9 +116,10 @@ exports.notice = function(from) {
   }
 }
 
-exports.warn = function(from) {
+exports.warn = function(from, disable) {
   from && (from = '[' + from + ']')
   return function() {
+    if (disable) return;
     if (!config.output['WARNING']) return;
     var args = Array.prototype.slice.call(arguments);
     from && args.unshift(from);
@@ -123,8 +127,9 @@ exports.warn = function(from) {
   }
 }
 
-exports.error = function(from) {
+exports.error = function(from, disable) {
   return function() {
+    if (disable) return;
     if (!config.output['ERROR']) return;
     var args = Array.prototype.slice.call(arguments);
     var err = new Error(args.join(' '));

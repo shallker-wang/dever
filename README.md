@@ -1,4 +1,4 @@
-logger
+dever
 ==========
 
-Keep log simple.
+Dev helper.

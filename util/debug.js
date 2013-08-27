@@ -1,1 +1,1 @@
-module.exports = require('./logger').debug;
+module.exports = require('./dever').debug;

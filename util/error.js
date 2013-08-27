@@ -1,1 +1,1 @@
-module.exports = require('./logger').error;
+module.exports = require('./dever').error;

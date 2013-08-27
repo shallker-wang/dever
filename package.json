@@ -1,11 +1,26 @@
 {
-  "name": "logger",
-  "description": "Keep log simple.",
+  "name": "dever",
+  "description": "Dev helper.",
   "version": "1.0.0",
   "author": "Shallker Wang <shallker.wang@profero.com>",
-  "main": "util/logger",
+  "main": "index.js",
+  "keywords": [
+    "dev", "log", "logger", "debug", "info", "warn"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shallker-wang/logger.git"
-  }
+    "url": "https://github.com/shallker-wang/dever.git"  
+  },
+  "bugs": {
+    "url": "https://github.com/shallker-wang/dever/issues"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "coffee-script": "*"
+  },
+  "scripts": {
+    "test": "mocha --recursive --compilers coffee:coffee-script -r should"
+  },
+  "license": "MIT"
 }
