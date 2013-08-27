@@ -1,6 +1,6 @@
 {
   "name": "dever",
-  "description": "Dev helper.",
+  "description": "A dev helper.",
   "version": "1.0.0",
   "author": "Shallker Wang <shallker.wang@profero.com>",
   "main": "index.js",
