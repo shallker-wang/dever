@@ -13,6 +13,8 @@ npm install dever
 ```javascript
 var debug = require('dever').debug('api/users')
 var error = require('dever').error('api/users')
+debug('hey, I got something here')
+return error('opps, something goes wrong')
 ```
 
 ## dev.json
