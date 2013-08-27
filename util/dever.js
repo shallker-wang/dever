@@ -72,6 +72,8 @@ function warn(args) {
 
 function error(err) {
   if (config["throw"]) {
+    /* remove first line trace which is from here */
+    err.stack = err.stack.replace(/\n\s*at\s*\S*/, '');
     throw err;
   } else {
     var args = ['[Error]'];
