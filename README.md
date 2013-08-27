@@ -17,6 +17,13 @@ debug('hey, I got something here')
 return error('opps, something goes wrong')
 ```
 
+## Silent Mode
+Turn off the output:
+```javascript
+var debug = require('dever').debug('/api/users', 'shutup')
+var error = require('dever').error('/api/users', 'swallow')
+``
+
 ## dev.json
 A config file to control output in development:
 ```json
