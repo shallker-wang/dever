@@ -25,14 +25,14 @@ var error = require('dever').error('/api/users', 'swallow')
 ```
 
 ## Log levels
-0 [EMERGENCY] system is unusable
-1 [ALERT] action must be taken immediately
-2 [CRITICAL] the system is in critical condition
-3 [ERROR] error condition
-4 [WARNING] warning condition
-5 [NOTICE] a normal but significant condition
-6 [INFO] a purely informational message
-7 [DEBUG] messages to debug an application
+* 0 [EMERGENCY] system is unusable  
+* 1 [ALERT] action must be taken immediately  
+* 2 [CRITICAL] the system is in critical condition  
+* 3 [ERROR] error condition  
+* 4 [WARNING] warning condition  
+* 5 [NOTICE] a normal but significant condition  
+* 6 [INFO] a purely informational message  
+* 7 [DEBUG] messages to debug an application  
 
 ## dev.json
 A config file to control output in development:
