@@ -33,16 +33,16 @@ function readFileJSON(path) {
 function defaultConfig() {
   return {
     "output": {
-      "EMERGENCY": true,
-      "ALERT": true,
-      "CRITICAL": true,
-      "ERROR": true,
-      "WARNING": true,
-      "NOTICE": true,
-      "INFO": true,
-      "DEBUG": true 
+      "EMERGENCY": false,
+      "ALERT": false,
+      "CRITICAL": false,
+      "ERROR": false,
+      "WARNING": false,
+      "NOTICE": false,
+      "INFO": false,
+      "DEBUG": false 
     },
-    "throw": true
+    "throw": false
   }
 }
 
