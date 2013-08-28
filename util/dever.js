@@ -37,9 +37,9 @@ function defaultConfig() {
       "ALERT": false,
       "CRITICAL": false,
       "ERROR": false,
-      "WARNING": false,
-      "NOTICE": false,
-      "INFO": false,
+      "WARNING": true,
+      "NOTICE": true,
+      "INFO": true,
       "DEBUG": false 
     },
     "throw": false
