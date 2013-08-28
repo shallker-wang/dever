@@ -12,16 +12,8 @@
 
 var fs = require('fs'),
     dev,
-    pro;
-
-function readFileJSON(path) {
-  var json = fs.readFileSync(path, {encoding: 'utf8'});
-  return JSON.parse(json);
-}
-
-function defaultConfig() {
-  return {
-    "level": {
+    pro,
+    level = {
       "0": "EMERGENCY",
       "1": "ALERT",
       "2": "CRITICAL",
@@ -30,7 +22,16 @@ function defaultConfig() {
       "5": "NOTICE",
       "6": "INFO",
       "7": "DEBUG"
-    },
+    };
+
+function readFileJSON(path) {
+  var json = fs.readFileSync(path, {encoding: 'utf8'});
+  return JSON.parse(json);
+}
+
+
+function defaultConfig() {
+  return {
     "output": {
       "EMERGENCY": true,
       "ALERT": true,
