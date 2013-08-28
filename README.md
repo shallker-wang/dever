@@ -70,6 +70,9 @@ A config file to control output in production:
 }
 ```
 
+## Todo
+* readFileJSON() to require()
+
 ---
 
 Copyright (c) 2013 Shallker Wang - MIT License (enclosed)
