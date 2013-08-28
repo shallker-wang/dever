@@ -1,7 +1,7 @@
 {
   "name": "dever",
   "description": "A dev helper.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Shallker Wang <shallker.wang@profero.com>",
   "main": "index.js",
   "keywords": [
