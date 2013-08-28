@@ -11,8 +11,8 @@ npm install dever
 
 ## Quick Start
 ```javascript
-var debug = require('dever').debug('api/users')
-var error = require('dever').error('api/users')
+var debug = require('dever').debug('Controller/Users')
+var error = require('dever').error('Controller', 'Users')
 debug('hey, I got something here')
 return error('opps, something goes wrong')
 ```
@@ -20,8 +20,8 @@ return error('opps, something goes wrong')
 ## Silent Mode
 Turn off the output:
 ```javascript
-var debug = require('dever').debug('/api/users', 'shutup')
-var error = require('dever').error('/api/users', 'swallow')
+var debug = require('dever').debug('/api/users').off
+var error = require('dever').error('/api/users').off
 ```
 
 ## Log levels

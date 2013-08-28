@@ -11,6 +11,7 @@
 */
 
 var fs = require('fs'),
+    slice = Array.prototype.slice,
     dev,
     pro,
     level = {
@@ -51,22 +52,27 @@ try { pro = readFileJSON(process.env.PWD + '/pro.json'); } catch (e) {}
 
 config = dev || pro || defaultConfig();
 
-function debug(args) {
+function debug() {
+  var args = slice.call(arguments)
   args.unshift('[Debug]');
   console.log.apply(console, args);
 }
 
-function info(args) {
+function info() {
+  var args = slice.call(arguments)
   args.unshift('[Info]');
   console.info.apply(console, args)
 }
 
-function notice(args) {
+function notice() {
+  var args = slice.call(arguments)
   args.unshift('[Notice]');
   console.log.apply(console, args);
+
 }
 
-function warn(args) {
+function warn() {
+  var args = slice.call(arguments)
   args.unshift('[Warn]');
   console.warn.apply(console, args);
 }
@@ -86,57 +92,90 @@ function error(err) {
 }
 
 
-exports.debug = function(from, disable) {
-  from && (from = '[' + from + ']')
-  return function() {
-    if (disable) return;
+exports.debug = function(froms) {
+  froms = slice.call(arguments).map(function(from) {
+    return '[' + from + ']';
+  });
+
+  function exDebug() {
     if (!config.output['DEBUG']) return;
-    var args = Array.prototype.slice.call(arguments);
-    from && args.unshift(from);
-    return debug(args);
+    return debug.apply({}, froms.concat(slice.call(arguments)));
   }
+
+  exDebug.off = function() {
+    return function() {}
+  }
+
+  return exDebug;
 }
 
-exports.info = function(from, disable) {
-  from && (from = '[' + from + ']')
-  return function() {
-    if (disable) return;
+exports.info = function(froms) {
+  froms = slice.call(arguments).map(function(from) {
+    return '[' + from + ']';
+  });
+
+  function exInfo() {
     if (!config.output['INFO']) return;
-    var args = Array.prototype.slice.call(arguments);
-    from && args.unshift(from);
-    return info(args);
+    return info.apply({}, froms.concat(slice.call(arguments)));
   }
+
+  exInfo.off = function() {
+    return function() {}
+  }
+
+  return exInfo;
 }
 
-exports.notice = function(from, disable) {
-  from && (from = '[' + from + ']')
-  return function() {
-    if (disable) return;
+exports.notice = function(froms) {
+  froms = slice.call(arguments).map(function(from) {
+    return '[' + from + ']';
+  });
+
+  function exNotice() {
     if (!config.output['NOTICE']) return;
-    var args = Array.prototype.slice.call(arguments);
-    from && args.unshift(from);
-    return notice(args);
+    return notice.apply({}, froms.concat(slice.call(arguments)));
   }
+
+  exNotice.off = function() {
+    return function() {}
+  }
+
+  return exNotice;
 }
 
-exports.warn = function(from, disable) {
-  from && (from = '[' + from + ']')
-  return function() {
-    if (disable) return;
+exports.warn = function(froms) {
+  froms = slice.call(arguments).map(function(from) {
+    return '[' + from + ']';
+  });
+
+  function exWarn() {
     if (!config.output['WARNING']) return;
-    var args = Array.prototype.slice.call(arguments);
-    from && args.unshift(from);
-    return warn(args);
+    return warn.apply({}, froms.concat(slice.call(arguments)));
   }
+
+  exWarn.off = function() {
+    return function() {}
+  }
+
+  return exWarn;
 }
 
-exports.error = function(from, disable) {
-  return function() {
-    if (disable) return;
-    if (!config.output['ERROR']) return;
-    var args = Array.prototype.slice.call(arguments);
-    var err = new Error(args.join(' '));
-    from && (err.name = from);
+exports.error = function(froms) {
+  froms = slice.call(arguments).map(function(from) {
+    return '[' + from + ']';
+  });
+
+  function exError() {
+    var err;
+    if (!config.output['ERROR']) return false;
+    err = new Error(slice.call(arguments).join(' '));
+    err.name = froms.join(' ');
     return error(err);
   }
+
+  exError.off = function() {
+    return function() {}
+  }
+
+  return exError;
 }
