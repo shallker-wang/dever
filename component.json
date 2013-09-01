@@ -2,7 +2,7 @@
   "name": "dever",
   "repo": "shallker-wang/dever",
   "description": "A dev helper.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "keywords": [
     "dev", "log", "logger", "debug", "info", "warn"
   ],
