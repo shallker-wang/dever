@@ -10,8 +10,7 @@
   7 DEBUG messages to debug an application
 */
 
-var fs = require('fs'),
-    slice = Array.prototype.slice,
+var slice = Array.prototype.slice,
     dev,
     pro,
     config,
@@ -27,10 +26,13 @@ var fs = require('fs'),
     };
 
 function readFileJSON(path) {
-  var json = fs.readFileSync(path, {encoding: 'utf8'});
+  var json = require('fs').readFileSync(path, {encoding: 'utf8'});
   return JSON.parse(json);
 }
 
+function loadConfig(name) {
+  return readFileJSON(process.env.PWD + '/' + name);
+}
 
 function defaultConfig() {
   return {
@@ -48,8 +50,8 @@ function defaultConfig() {
   }
 }
 
-try { dev = readFileJSON(process.env.PWD + '/dev.json') } catch (e) {}
-try { pro = readFileJSON(process.env.PWD + '/pro.json'); } catch (e) {}
+try { dev = loadConfig('dev.json'); } catch (e) {}
+try { pro = loadConfig('pro.json'); } catch (e) {}
 
 config = dev || pro || defaultConfig();
 
