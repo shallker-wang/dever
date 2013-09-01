@@ -113,6 +113,9 @@ function error(err) {
   return false;
 }
 
+exports.config = function(json) {
+  config = json;
+}
 
 exports.debug = function(froms) {
   froms = slice.call(arguments).map(function(from) {
