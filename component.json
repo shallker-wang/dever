@@ -1,0 +1,15 @@
+{
+  "name": "dever",
+  "repo": "shallker-wang/dever",
+  "description": "A dev helper.",
+  "version": "2.0.0",
+  "keywords": [
+    "dev", "log", "logger", "debug", "info", "warn"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+    "util/dever.js"
+  ]
+}

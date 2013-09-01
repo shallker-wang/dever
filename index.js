@@ -1,5 +1,3 @@
-var pkg = require('./package');
-
 module.exports = exports = require('./util/dever');
 
-exports.version = pkg.version;
+exports.version = '2.0.0';
