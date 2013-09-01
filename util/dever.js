@@ -14,6 +14,7 @@ var fs = require('fs'),
     slice = Array.prototype.slice,
     dev,
     pro,
+    config,
     level = {
       "0": "EMERGENCY",
       "1": "ALERT",
