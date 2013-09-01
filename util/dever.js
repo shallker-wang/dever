@@ -55,29 +55,48 @@ try { pro = loadConfig('pro.json'); } catch (e) {}
 
 config = dev || pro || defaultConfig();
 
+function log() {
+  console.log.apply(console, slice.call(arguments));
+}
+
 function debug() {
   var args = slice.call(arguments)
   args.unshift('[Debug]');
-  console.log.apply(console, args);
+  if (console.debug) {
+    console.debug.apply(console, args);
+  } else {
+    console.log.apply(console, args);
+  }
 }
 
 function info() {
   var args = slice.call(arguments)
   args.unshift('[Info]');
-  console.info.apply(console, args)
+  if (console.info) {
+    console.info.apply(console, args)
+  } else {
+    console.log.apply(console, args)
+  }
 }
 
 function notice() {
   var args = slice.call(arguments)
   args.unshift('[Notice]');
-  console.log.apply(console, args);
-
+  if (console.notice) {
+    console.notice.apply(console, args);
+  } else {
+    console.log.apply(console, args);
+  }
 }
 
 function warn() {
   var args = slice.call(arguments)
   args.unshift('[Warn]');
-  console.warn.apply(console, args);
+  if (console.warn) {
+    console.warn.apply(console, args);
+  } else {
+    console.log.apply(console, args);
+  }
 }
 
 function error(err) {
