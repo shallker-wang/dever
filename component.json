@@ -7,12 +7,13 @@
     "dev", "log", "logger", "debug", "info", "warn"
   ],
   "dependencies": {
-    "shallker/array-map-shim": "*"
+    "shallker/array-map-shim": "*",
+    "shallker/array-forEach-shim": "*"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "component.js",
   "scripts": [
-    "index.js",
+    "component.js",
     "util/dever.js"
   ]
 }

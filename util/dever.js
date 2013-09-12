@@ -1,5 +1,3 @@
-require('array-map-shim');
-
 /* Log level */
 /*
   0 EMERGENCY system is unusable
