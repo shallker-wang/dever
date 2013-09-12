@@ -6,6 +6,9 @@
   "keywords": [
     "dev", "log", "logger", "debug", "info", "warn"
   ],
+  "dependencies": {
+    "shallker/array-map-shim"  
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [
