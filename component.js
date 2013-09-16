@@ -1,4 +1,4 @@
-require('array-map-shim');
+require('Array.prototype.map');
 require('array-foreach-shim');
 
 exports = module.exports = require('./util/dever');

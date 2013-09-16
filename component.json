@@ -7,7 +7,7 @@
     "dev", "log", "logger", "debug", "info", "warn"
   ],
   "dependencies": {
-    "shallker/array-map-shim": "*",
+    "polyfill/Array.prototype.map": "*",
     "shallker/array-forEach-shim": "*"
   },
   "license": "MIT",
